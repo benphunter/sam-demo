@@ -9,8 +9,8 @@ Resources:
       Runtime: nodejs4.3
       Environment:
         Variables:
-          TIME_ZONE: !ref timeZoneParam
-          STAGE: !ref stage
+          TIME_ZONE: !Ref timeZoneParam
+          STAGE: !Ref stage
       CodeUri: ./
       Events:
         MyTimeApi:
