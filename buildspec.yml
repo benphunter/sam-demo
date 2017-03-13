@@ -9,3 +9,5 @@ artifacts:
   type: zip
   files:
     - NewSamTemplate.yaml
+    - beta.json
+    - prod.json

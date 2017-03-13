@@ -7,6 +7,10 @@ Resources:
     Properties:
       Handler: index.handler
       Runtime: nodejs4.3
+      Environment:
+        Variables:
+          TIME_ZONE: !ref timeZoneParam
+          STAGE: !ref stage
       CodeUri: ./
       Events:
         MyTimeApi:
@@ -14,3 +18,8 @@ Resources:
           Properties:
             Path: /TimeResource
             Method: GET
+Parameters:
+  timeZoneParam:
+    Type: String
+  stage:
+    Type: String

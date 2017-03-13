@@ -1,0 +1,6 @@
+{
+  "Parameters": {
+    "timeZoneParam": "America/New_York",
+    "stage": "prod"
+  }
+}
