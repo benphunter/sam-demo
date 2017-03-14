@@ -14,10 +14,10 @@ Resources:
       Events:
         MyTimeApi:
           Type: Api
-          StageName: !Ref stage
           Properties:
             Path: /TimeResource
             Method: GET
+            StageName: !Ref stage
 Parameters:
   timeZoneParam:
     Type: String
