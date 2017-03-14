@@ -11,10 +11,10 @@ Resources:
         Variables:
           TIME_ZONE: !Ref timeZoneParam
           STAGE: !Ref stage
-      CodeUri: ./
       Events:
         MyTimeApi:
           Type: Api
+          StageName: !Ref stage
           Properties:
             Path: /TimeResource
             Method: GET
