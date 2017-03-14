@@ -2,13 +2,25 @@ AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
 Description: Outputs the time
 Resources:
-  ApiGatewayApi:
-  Type: AWS::Serverless::Api
-  Properties:
-    StageName: Dev
-    Variables:
-      LambdaFunctionName: !Ref TimeFunction
-      RestApiId: !Ref ApiGatewayApi
+  MyApi:
+    Type: AWS::Serverless::Api
+    Properties:
+        StageName: dev
+        DefinitionBody:
+            swagger: 2.0
+            info:
+              title:
+                Ref: AWS::StackName
+            paths:
+              "/get":
+                get:
+                  x-amazon-apigateway-integration:
+                    httpMethod: POST
+                    type: aws_proxy
+                    uri:
+                      Fn::Sub: arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${TimeFunction.Arn}/invocations
+                  responses: {}
+            swagger: '2.0'
   TimeFunction:
     Type: AWS::Serverless::Function
     Properties:
@@ -22,7 +34,8 @@ Resources:
         MyTimeApi:
           Type: Api
           Properties:
-            RestApiId: !Ref ApiGatewayApi
+            RestApiId:
+              Ref: MyApi
             Path: /TimeResource
             Method: GET
 Parameters:
