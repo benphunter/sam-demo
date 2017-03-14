@@ -2,6 +2,13 @@ AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
 Description: Outputs the time
 Resources:
+  ApiGatewayApi:
+  Type: AWS::Serverless::Api
+  Properties:
+    StageName: Dev
+    Variables:
+      LambdaFunctionName: !Ref TimeFunction
+      RestApiId: !Ref ApiGatewayApi
   TimeFunction:
     Type: AWS::Serverless::Function
     Properties:
@@ -15,9 +22,9 @@ Resources:
         MyTimeApi:
           Type: Api
           Properties:
+            RestApiId: !Ref ApiGatewayApi
             Path: /TimeResource
             Method: GET
-            StageName: Dev
 Parameters:
   timeZoneParam:
     Type: String
