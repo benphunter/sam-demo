@@ -5,7 +5,7 @@ Resources:
   MyApi:
     Type: AWS::Serverless::Api
     Properties:
-        StageName: dev
+        StageName: !Ref stage
         DefinitionBody:
             swagger: 2.0
             info:
