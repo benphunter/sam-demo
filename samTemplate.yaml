@@ -12,7 +12,7 @@ Resources:
               title:
                 Ref: AWS::StackName
             paths:
-              "/get":
+              "/TimeResource":
                 get:
                   x-amazon-apigateway-integration:
                     httpMethod: POST
@@ -21,6 +21,7 @@ Resources:
                       Fn::Sub: arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${TimeFunction.Arn}/invocations
                   responses: {}
             swagger: '2.0'
+
   TimeFunction:
     Type: AWS::Serverless::Function
     Properties:
@@ -34,10 +35,10 @@ Resources:
         MyTimeApi:
           Type: Api
           Properties:
-            RestApiId:
-              Ref: MyApi
             Path: /TimeResource
             Method: GET
+            RestApiId:
+              Ref: MyApi
 Parameters:
   timeZoneParam:
     Type: String
