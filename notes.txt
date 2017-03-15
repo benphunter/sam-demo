@@ -3,6 +3,7 @@ Serverless SAM re:Invent session - https://www.youtube.com/watch?v=8Zd-8GV-1mY&l
 
 Serverless code pipeline steps - http://docs.aws.amazon.com/lambda/latest/dg/automating-deployment.html
 
+Git Repository - https://github.com/awslabs/serverless-application-model
+
 Next Steps:
-  1. Create prod and beta steps.
-  2. Check both websites work.
+  1. Check why definition body is being inserted in template.
