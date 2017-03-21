@@ -9,8 +9,8 @@ Git Repository - https://github.com/awslabs/serverless-application-model
 Why is definitionURI is being inserted in template when definitionBody is already specified?
   This is a bug this is fixed in the latest CLI.
   Current CodeBuild Docker image is based on aws-cli/1.11.25 we need aws-cli/1.11.63
+  Updated docker image in CLI with
 
 Next Steps:
-    1. Update Docker image?
-
-    
+    1. review - https://aws.amazon.com/blogs/aws/aws-x-ray-see-inside-of-your-distributed-application/
+    2. create xray example
