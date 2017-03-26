@@ -5,7 +5,6 @@ Serverless code pipeline steps - http://docs.aws.amazon.com/lambda/latest/dg/aut
 
 Git Repository - https://github.com/awslabs/serverless-application-model
 
-
 Why is definitionURI is being inserted in template when definitionBody is already specified?
   This is a bug this is fixed in the latest CLI.
   Current CodeBuild Docker image is based on aws-cli/1.11.25 we need aws-cli/1.11.63
