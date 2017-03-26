@@ -3,8 +3,8 @@ phases:
   install:
     commands:
       - aws --version && git --version && pip --version && python --version
-      #- pip install --upgrade --user awscli
-      #- aws --version
+      - pip install --upgrade --user awscli
+      - aws --version
       - npm install time
       - aws cloudformation package --template-file samTemplate.yaml --s3-bucket sam-demo
                                    --output-template-file NewSamTemplate.yaml
