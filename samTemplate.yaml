@@ -18,8 +18,6 @@ Resources:
           Properties:
             Path: /TimeResource
             Method: GET
-            RestApiId:
-              Ref: MyApi
 Parameters:
   timeZoneParam:
     Type: String
