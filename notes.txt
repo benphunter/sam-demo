@@ -13,3 +13,15 @@ Why is definitionURI is being inserted in template when definitionBody is alread
 Next Steps:
     1. review - https://aws.amazon.com/blogs/aws/aws-x-ray-see-inside-of-your-distributed-application/
     2. create xray example
+
+
+
+aws cloudformation package --template-file template.yaml --s3-bucket sam-demo --output-template-file output.yaml
+
+aws cloudformation deploy --template-file output.yaml --stack-name microservice-demo --capabilities CAPABILITY_IAM
+
+
+
+git add .
+git commit -m updated
+git push
