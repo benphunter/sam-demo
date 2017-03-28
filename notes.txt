@@ -11,16 +11,30 @@ Why is definitionURI is being inserted in template when definitionBody is alread
   Updated docker image in CLI with
 
 
-Next Steps:
-    1. review - https://aws.amazon.com/blogs/aws/aws-x-ray-see-inside-of-your-distributed-application/
-    2. create xray example
+Show blueprint - Show Code.uri
 
+    aws cloudformation package --template-file template.yaml --s3-bucket sam-demo --output-template-file output.yaml
 
-aws cloudformation package --template-file template.yaml --s3-bucket sam-demo --output-template-file output.yaml
+Show output.yaml
 
-aws cloudformation deploy --template-file output.yaml --stack-name microservice-demo --capabilities CAPABILITY_IAM
+    aws cloudformation deploy --template-file output.yaml --stack-name microservice-demo --capabilities CAPABILITY_IAM
 
+Show API
 
+    aws cloudformation delete-stack --stack-name microservice-demo
+
+Show Pipeline
+  Discuss each stage and show Test Stage
+  Look at build logs
+  Disable transition
+
+Show files in Git Repo
+
+Edit Git
+
+Add commit Push
+
+Show updated webpage.
 
 git add .
 git commit -m updated
